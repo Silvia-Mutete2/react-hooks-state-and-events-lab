@@ -4,6 +4,9 @@ import Item from "./Item";
 function ShoppingList({ items }) {
     const [selectedCategory ,setSelectedCategory] =useState("All")
 
+    function handleSubmit(event) {
+      setSelectedCategory(event.target.value)
+    }
  const selectedItems= items.filter(item => {
     if (selectedCategory === 'All') {
       return true
@@ -12,12 +15,6 @@ function ShoppingList({ items }) {
     }
 
   })
-
-  function handleSubmit(event) {
-    setSelectedCategory(event.target.value)
-  }
-
-
 
   return (
     <div className="ShoppingList">
